@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { FiSearch, FiMenu, FiX } from "react-icons/fi";
-import { RiArrowRightLine } from "react-icons/ri";
-
 
 const MainContainer = styled.main`
   min-height: 70vh;
@@ -96,15 +94,28 @@ const SearchInput = styled.input`
   }
 `;
 
-const SearchIcon = styled(FiSearch)`
+const StyledSearchIcon = styled.div`
   position: absolute;
   right: 0.75rem;
   top: 50%;
   transform: translateY(-50%);
   color: white;
-  width: 1.25rem;
-  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
 `;
+
+const SearchIconWrapper = () => (
+  <StyledSearchIcon>
+    <FiSearch />
+  </StyledSearchIcon>
+);
 
 const HeroSection = styled.section`
   position: relative;
@@ -283,7 +294,7 @@ const CadburyLanding: React.FC = () => {
   return (
     <MainContainer>
       <Nav>
-        <Logo src="/logo.png" alt="Cadbury Logo" />
+        <Logo src="./image-103.png" alt="Cadbury Logo" />
         
         {/* Regular Desktop Links */}
         <NavLinks>
@@ -292,11 +303,15 @@ const CadburyLanding: React.FC = () => {
           <NavLink href="#">Explore</NavLink>
           <NavLink href="#">Recipes</NavLink>
           <NavLink href="#">Gifting</NavLink>
+          <SearchContainer>
+            <SearchInput type="text" placeholder="Search..." />
+            <SearchIconWrapper />
+          </SearchContainer>
         </NavLinks>
 
         {/* Hamburger Icon */}
         <HamburgerMenu onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          {isMenuOpen ? <FiX size={28} color="white" /> : <FiMenu size={28} color="white" />}
+          {isMenuOpen ? <FiX size={24} color="white" /> : <FiMenu size={24} color="white" />}
         </HamburgerMenu>
 
         {/* Mobile Menu */}
@@ -306,6 +321,10 @@ const CadburyLanding: React.FC = () => {
           <NavLink href="#">Explore</NavLink>
           <NavLink href="#">Recipes</NavLink>
           <NavLink href="#">Gifting</NavLink>
+          <SearchContainer>
+            <SearchInput type="text" placeholder="Search..." />
+            <SearchIconWrapper />
+          </SearchContainer>
         </MobileMenu>
       </Nav>
 
