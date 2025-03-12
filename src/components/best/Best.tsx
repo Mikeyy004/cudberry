@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { RiArrowRightLine } from "react-icons/ri";
+import { IconType } from "react-icons";
 
 const Container = styled.div`
   max-width: 1400px;
@@ -140,7 +141,7 @@ export default function Best() {
             </CardTitle>
             <DiscoverLink href="#">
               Discover more
-              <RiArrowRightLine />
+              {React.createElement(RiArrowRightLine as IconType)}
             </DiscoverLink>
           </CardContent>
           <ImageContainer1>
@@ -157,7 +158,7 @@ export default function Best() {
             </CardTitle>
             <DiscoverLink href="#">
               Discover more
-              <RiArrowRightLine />
+              {React.createElement(RiArrowRightLine as IconType)}
             </DiscoverLink>
           </CardContent>
           <RotatedImageContainer className="image-container-2">
@@ -174,7 +175,7 @@ export default function Best() {
             </CardTitle>
             <DiscoverLink href="#">
               Discover more
-              <RiArrowRightLine />
+              {React.createElement(RiArrowRightLine as IconType)}
             </DiscoverLink>
           </CardContent>
           <ImageContainer3 className="image-container-3">
