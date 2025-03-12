@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { FiSearch, FiMenu, FiX } from "react-icons/fi";
+import {FiMenu, FiX } from "react-icons/fi";
+import { FiSearch } from "react-icons/fi";
+import { IconType } from "react-icons";
+
 
 const MainContainer = styled.main`
   min-height: 70vh;
@@ -111,11 +114,14 @@ const StyledSearchIcon = styled.div`
   }
 `;
 
-const SearchIconWrapper = () => (
-  <StyledSearchIcon>
-    <FiSearch />
-  </StyledSearchIcon>
-);
+const SearchIconWrapper: React.FC = () => {
+  const SearchIcon = FiSearch as IconType;
+  return (
+    <StyledSearchIcon>
+      <SearchIcon />
+    </StyledSearchIcon>
+  );
+};
 
 const HeroSection = styled.section`
   position: relative;
