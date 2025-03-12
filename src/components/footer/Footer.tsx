@@ -1,4 +1,4 @@
-import type React from "react";
+import React from "react";
 import styled from "styled-components";
 import type { IconType } from "react-icons";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaEnvelope } from "react-icons/fa";
@@ -118,8 +118,9 @@ const SocialIcons = styled.div`
   }
 `;
 
-const SocialIcon: React.FC<{ icon: IconType }> = ({ icon: Icon }) => {
-  return <Icon />;
+const SocialIcon = ({ icon: Icon }: { icon: IconType }) => {
+  const IconComponent = Icon as React.ComponentType;
+  return <IconComponent />;
 };
 
 const Footer: React.FC = () => {
