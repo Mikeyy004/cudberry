@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import {FiMenu, FiX } from "react-icons/fi";
 import { FiSearch } from "react-icons/fi";
-import { IconType } from "react-icons";
+import { IconBaseProps } from "react-icons";
 
 
 const MainContainer = styled.main`
@@ -114,9 +114,11 @@ const StyledSearchIcon = styled.div`
   }
 `;
 
+const SearchIcon = (props: IconBaseProps) => <FiSearch {...props} />;
+
 const SearchIconWrapper: React.FC = () => (
   <StyledSearchIcon>
-    <FiSearch size={20} />
+    <SearchIcon size={20} />
   </StyledSearchIcon>
 );
 
