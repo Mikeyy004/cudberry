@@ -114,14 +114,11 @@ const StyledSearchIcon = styled.div`
   }
 `;
 
-const SearchIconWrapper: React.FC = () => {
-  const SearchIcon = FiSearch as IconType;
-  return (
-    <StyledSearchIcon>
-      <SearchIcon />
-    </StyledSearchIcon>
-  );
-};
+const SearchIconWrapper: React.FC = () => (
+  <StyledSearchIcon>
+    <FiSearch size={20} />
+  </StyledSearchIcon>
+);
 
 const HeroSection = styled.section`
   position: relative;
