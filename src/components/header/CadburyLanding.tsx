@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { FiSearch, FiMenu, FiX } from "react-icons/fi";
+import { RiArrowRightLine } from "react-icons/ri";
+
 
 const MainContainer = styled.main`
   min-height: 70vh;
