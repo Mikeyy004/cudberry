@@ -141,7 +141,7 @@ export default function Best() {
             </CardTitle>
             <DiscoverLink href="#">
               Discover more
-              {React.createElement(RiArrowRightLine as IconType)}
+              <RiArrowRightLine size={20} />
             </DiscoverLink>
           </CardContent>
           <ImageContainer1>
@@ -158,7 +158,7 @@ export default function Best() {
             </CardTitle>
             <DiscoverLink href="#">
               Discover more
-              {React.createElement(RiArrowRightLine as IconType)}
+              <RiArrowRightLine size={20} />
             </DiscoverLink>
           </CardContent>
           <RotatedImageContainer className="image-container-2">
@@ -175,7 +175,7 @@ export default function Best() {
             </CardTitle>
             <DiscoverLink href="#">
               Discover more
-              {React.createElement(RiArrowRightLine as IconType)}
+              <RiArrowRightLine size={20} />
             </DiscoverLink>
           </CardContent>
           <ImageContainer3 className="image-container-3">
