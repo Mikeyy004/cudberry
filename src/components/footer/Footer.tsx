@@ -1,5 +1,6 @@
 import type React from "react";
 import styled from "styled-components";
+import type { IconType } from "react-icons";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const FooterContainer = styled.footer`
@@ -117,6 +118,10 @@ const SocialIcons = styled.div`
   }
 `;
 
+const SocialIcon: React.FC<{ icon: IconType }> = ({ icon: Icon }) => {
+  return <Icon />;
+};
+
 const Footer: React.FC = () => {
   return (
     <FooterContainer>
@@ -173,16 +178,19 @@ const Footer: React.FC = () => {
         <p>© {new Date().getFullYear()} Cudberry. All rights reserved.</p>
         <SocialIcons>
           <a href="#" aria-label="Facebook">
-            <FaFacebook />
+            <SocialIcon icon={FaFacebook} />
           </a>
           <a href="#" aria-label="Twitter">
-            <FaTwitter />
+            <SocialIcon icon={FaTwitter} />
           </a>
           <a href="#" aria-label="Instagram">
-            <FaInstagram />
+            <SocialIcon icon={FaInstagram} />
           </a>
           <a href="#" aria-label="LinkedIn">
-            <FaLinkedin />
+            <SocialIcon icon={FaLinkedin} />
+          </a>
+          <a href="#" aria-label="Email">
+            <SocialIcon icon={FaEnvelope} />
           </a>
         </SocialIcons>
       </FooterBottom>
