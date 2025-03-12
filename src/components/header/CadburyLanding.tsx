@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import {FiMenu, FiX } from "react-icons/fi";
-import { FiSearch } from "react-icons/fi";
-import { IconBaseProps } from "react-icons";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const MainContainer = styled.main`
   min-height: 70vh;
@@ -114,11 +112,9 @@ const StyledSearchIcon = styled.div`
   }
 `;
 
-const SearchIcon = (props: IconBaseProps) => <FiSearch {...props} />;
-
 const SearchIconWrapper: React.FC = () => (
   <StyledSearchIcon>
-    <SearchIcon size={20} />
+    <FontAwesomeIcon icon={faSearch} size="lg" />
   </StyledSearchIcon>
 );
 
@@ -316,7 +312,11 @@ const CadburyLanding: React.FC = () => {
 
         {/* Hamburger Icon */}
         <HamburgerMenu onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          {isMenuOpen ? <FiX size={24} color="white" /> : <FiMenu size={24} color="white" />}
+          {isMenuOpen ? (
+            <FontAwesomeIcon icon={faTimes} size="lg" color="white" />
+          ) : (
+            <FontAwesomeIcon icon={faBars} size="lg" color="white" />
+          )}
         </HamburgerMenu>
 
         {/* Mobile Menu */}
