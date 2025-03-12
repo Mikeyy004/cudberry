@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import type { IconType as IconComponent } from "react-icons";
 import { RiArrowRightLine } from "react-icons/ri";
-import { IconType } from "react-icons";
 
 const Container = styled.div`
   max-width: 1400px;
@@ -64,22 +64,12 @@ const DiscoverLink = styled.a`
   color: #ae8c53;
   font-weight: 500;
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
+  display: inline-block;
   width: fit-content;
   font-size: 0.9rem;
 
   &:hover {
     text-decoration: underline;
-  }
-
-  svg {
-    transition: transform 0.2s ease;
-  }
-
-  &:hover svg {
-    transform: translateX(4px);
   }
 `;
 
@@ -126,6 +116,8 @@ const Image = styled.img`
   border-radius: 0.25rem;
 `;
 
+const ArrowIcon = RiArrowRightLine as IconComponent;
+
 export default function Best() {
   return (
     <Container>
@@ -141,7 +133,6 @@ export default function Best() {
             </CardTitle>
             <DiscoverLink href="#">
               Discover more
-              <RiArrowRightLine size={20} />
             </DiscoverLink>
           </CardContent>
           <ImageContainer1>
@@ -158,7 +149,6 @@ export default function Best() {
             </CardTitle>
             <DiscoverLink href="#">
               Discover more
-              <RiArrowRightLine size={20} />
             </DiscoverLink>
           </CardContent>
           <RotatedImageContainer className="image-container-2">
@@ -175,7 +165,6 @@ export default function Best() {
             </CardTitle>
             <DiscoverLink href="#">
               Discover more
-              <RiArrowRightLine size={20} />
             </DiscoverLink>
           </CardContent>
           <ImageContainer3 className="image-container-3">
